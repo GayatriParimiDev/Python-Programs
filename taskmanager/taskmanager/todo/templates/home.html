@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .add-btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .add-btn:hover { background: #43a047; }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            background: #fafafa;
+            margin-bottom: 12px;
+            padding: 15px;
+            list-style: none;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .task-info {
+            max-width: 70%;
+        }
+
+        .task-title {
+            font-weight: bold;
+            font-size: 18px;
+            color: #222;
+        }
+
+        .task-desc {
+            color: #666;
+        }
+
+        .actions a {
+            margin-left: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .edit-btn { background: #2196F3; }
+        .edit-btn:hover { background: #1976d2; }
+
+        .delete-btn { background: #e53935; }
+        .delete-btn:hover { background: #c62828; }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h2>Task List</h2>
+        <a class="add-btn" href="/add/">+ Add New Task</a>
+
+        <ul>
+            {% for task in tasks %}
+                <li>
+                    <div class="task-info">
+                        <div class="task-title">{{ task.title }}</div>
+                        <div class="task-desc">{{ task.description }}</div>
+                    </div>
+
+                    <div class="actions">
+                        <a class="edit-btn" href="/update/{{ task.id }}/">Edit</a>
+                        <a class="delete-btn" href="/delete/{{ task.id }}/">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+</body>
+</html>

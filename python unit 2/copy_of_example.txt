@@ -1,0 +1,3 @@
+Python is a popular, high-level, general-purpose programming language known for its simple syntax, readability, and extensive libraries, used for web development, data science, automation, machine learning, and more. It's an interpreted language that supports multiple programming paradigms, including object-oriented, and is favored by beginners and experienced developers for its ease of use and flexibility. 
+This is a new line added to the file.
+This is a new line added to the file.
